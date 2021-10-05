@@ -18,7 +18,6 @@ passport.use(new LocalStrategy({
       if (e.password === false) {
         done(null, false);
       } else {
-        console.log(e)
         done(null, e)
       }
     })
