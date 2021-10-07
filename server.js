@@ -2,6 +2,7 @@ const express = require('express');
 const ejs = require('ejs');
 const session = require('express-session');
 const passport = require('passport');
+const path = require('path');
 
 require('./passport');
 
@@ -14,6 +15,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: false}));
 app.use(session({
   secret: 'my_secret',

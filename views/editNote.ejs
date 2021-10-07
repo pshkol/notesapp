@@ -1,0 +1,15 @@
+<%- include('./templates/header') %>
+
+<form action="/editNote/<% if (id) { %><%= id %><% } %>" method="post" class="mx-auto mt-5" style="width: 40%">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Titulo de la nota" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">El contenido de la nota</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<%- include('./templates/footer') %>
